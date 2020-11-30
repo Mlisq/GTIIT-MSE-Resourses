@@ -1,8 +1,7 @@
 # **这里是 GTIIT 的一个小小资源库**
-![GtPic](sources/logo.png)
+![GtPic](https://www.gtiit.edu.cn/images/logo.png)
 
 ## **目录指引**
-- [**这里是 GTIIT 的一个小小资源库**](#这里是-gtiit-的一个小小资源库)
   - [**目录指引**](#目录指引)
   - [**项目介绍**](#项目介绍)
   - [**内容简介**](#内容简介)
