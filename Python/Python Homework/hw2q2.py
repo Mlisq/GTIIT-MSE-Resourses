@@ -1,8 +1,8 @@
 def isSymmetric(numberList = []):
     #Simplist way: Just check if the number made from left to right equals to one made from right to left
     
-    sum_1 = 0
-    sum_2 = 0
+    sum_1  = 0
+    sum_2  = 0
     length = len((numberList))    #To save some memory XD
     
     for i in range(length):
@@ -16,7 +16,7 @@ def isSymmetric(numberList = []):
     else:
         return False
     
-    return False
+    #return False
 
 #----int main(){----#
 
@@ -34,7 +34,6 @@ for i in range(len(value)):
     if(num % 2 != 0):
         OddList.append(num)
 
-#Judge. Ps: WHY THIS LANUAGE DON'T HAVE '&&' OR '||' ?
 if(isSymmetric(OddList) and isSymmetric(EvenList)):
         print("Both are symmetric")
 elif(isSymmetric(OddList) and not isSymmetric(EvenList)):

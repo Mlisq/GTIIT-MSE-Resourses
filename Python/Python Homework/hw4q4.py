@@ -20,15 +20,14 @@ def checkQualified(List = [], Index = 0, ValueX = 0, sumForNow = 0):
 
 seriesList = checkSpace(input("Input the series: ").split(' '))
 
-X = int(input("Input the X: "))
-
+X    = int(input("Input the X: "))
 Flag = False
 
 for i in range(len(seriesList)):
     if(checkQualified(seriesList , i , X , 0)):
         print("Could Start from Index[%d] "%i)
         flag = True
-        #break  #If only need to show one solve
+        #break  #If only need to show one solution
         
 if not Flag :
     print("Can't find a start")

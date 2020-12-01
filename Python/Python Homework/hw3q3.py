@@ -1,4 +1,3 @@
-#import numpy as np
 
 inputValue = input("Please input the n t d b (Using space to split each number)").split(' ')
 
