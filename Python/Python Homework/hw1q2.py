@@ -17,7 +17,7 @@ def isSymmetric(numberList = []):
 
 OddList  = []
 EvenList = []
-value    = input("Input your numbers : ")
+value    = input("Enter n :")
 
 for i in range(len(value)):
     num = (int)(value[i])

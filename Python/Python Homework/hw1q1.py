@@ -1,5 +1,5 @@
 #Assume all input will be legal
-num = (int)(input("Please input an integer : "))
+num = (int)(input("Enter n :"))
 
 #Print the upper part
 for i in range(num):

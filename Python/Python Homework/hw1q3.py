@@ -1,5 +1,5 @@
 
-inputValue = input("Please input the n t d b (Using space to split each number)").split(' ')
+inputValue = input("Enter values :").split(' ')
 
 for i in inputValue:
     if i == '':
