@@ -27,6 +27,7 @@ for i in range(len(seriesList)):
     if(checkQualified(seriesList , i , X , 0)):
         print("can be found starting in location %d "%i)
         Flag = True
+        break
 
 if not Flag :
     print("can NOT be found")
