@@ -1,5 +1,5 @@
 
-inputValue = input("Enter values :").split(' ')
+inputValue = input("Enter values : ").split(' ')
 
 for i in inputValue:
     if i == '':
@@ -20,3 +20,4 @@ for i in range(sizeNum):
         
 
 print(matrix)
+print('')

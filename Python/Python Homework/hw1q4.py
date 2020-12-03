@@ -18,9 +18,9 @@ def checkQualified(List = [], Index = 0, ValueX = 0, sumForNow = 0):
             return False
         return checkQualified(List, Index + 1, ValueX, sumForNow + (int)(List[Index]))
 
-seriesList = checkSpace(input("Enter series :").split(' '))
+seriesList = checkSpace(input("Enter series : ").split(' '))
 
-X    = int(input("Enter x :"))
+X    = int(input("Enter x : "))
 Flag = False
 
 for i in range(len(seriesList)):
@@ -30,3 +30,5 @@ for i in range(len(seriesList)):
 
 if not Flag :
     print("can NOT be found")
+
+print('')

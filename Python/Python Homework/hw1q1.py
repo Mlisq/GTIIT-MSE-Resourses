@@ -1,5 +1,5 @@
 #Assume all input will be legal
-num = (int)(input("Enter n :"))
+num = (int)(input("Enter n : "))
 
 #Print the upper part
 for i in range(num):
@@ -19,3 +19,5 @@ for i in range(num - 1, 0,-1):
         print('*',end = '')
         
     print('')
+
+print('')
