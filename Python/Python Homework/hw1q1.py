@@ -11,7 +11,7 @@ for i in range(num):
     
     print('')
 #Print the lower part
-for i in range(num - 1, 0,-1):    #range(Start,Stop,Step)
+for i in range(num - 1, 0,-1): 
     for j in range(num - i):
         print(' ',end = '')
         
