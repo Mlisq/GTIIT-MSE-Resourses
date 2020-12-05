@@ -1,8 +1,14 @@
+from copy import deepcopy
+
 def checkSpace(List = []):
+
+    _List = deepcopy(List)
+
     for i in List:
         if i == '':
-            List.remove(i)
-        return List
+            _List.remove(i)
+
+    return _List
 
 def checkQualified(List = [], Index = 0, ValueX = 0, sumForNow = 0):
     

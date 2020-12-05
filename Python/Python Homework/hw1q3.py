@@ -1,7 +1,9 @@
+from copy import deepcopy
 
-inputValue = input("Enter values : ").split(' ')
+_inputValue = input("Enter values : ").split(' ')
+inputValue = deepcopy(_inputValue)
 
-for i in inputValue:
+for i in _inputValue:
     if i == '':
         inputValue.remove(i)
         
