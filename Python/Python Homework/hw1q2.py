@@ -17,7 +17,7 @@ def isSymmetric(numberList = []):
 
 OddList  = []
 EvenList = []
-value    = input("Enter n : ")
+value    = input("Enter n : \n")
 
 for i in range(len(value)):
     num = (int)(value[i])
@@ -34,8 +34,5 @@ elif(isSymmetric(OddList) and not isSymmetric(EvenList)):
 elif(not isSymmetric(OddList) and isSymmetric(EvenList)):
         print("only even is symmetric")
 else:
-        print("no sub number is symmetric")
-
-print('')
-        
+        print("no sub number is symmetric")        
     

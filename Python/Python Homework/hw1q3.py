@@ -1,6 +1,6 @@
 from copy import deepcopy
 
-_inputValue = input("Enter values : ").split(' ')
+_inputValue = input("Enter values : \n").split(' ')
 inputValue = deepcopy(_inputValue)
 
 for i in _inputValue:
@@ -22,4 +22,3 @@ for i in range(sizeNum):
         
 
 print(matrix)
-print('')

@@ -24,18 +24,16 @@ def checkQualified(List = [], Index = 0, ValueX = 0, sumForNow = 0):
             return False
         return checkQualified(List, Index + 1, ValueX, sumForNow + (int)(List[Index]))
 
-seriesList = checkSpace(input("Enter series : ").split(' '))
+seriesList = checkSpace(input("Enter series : \n").split(' '))
 
-X    = int(input("Enter x : "))
+X    = int(input("Enter x : \n"))
 Flag = False
 
 for i in range(len(seriesList)):
     if(checkQualified(seriesList , i , X , 0)):
-        print("can be found starting in location %d "%i)
+        print("can be found starting in location %d"%i)
         Flag = True
         break
 
 if not Flag :
     print("can NOT be found")
-
-print('')
