@@ -61,3 +61,62 @@ bool explore(int a[],int x)
 }
 上面的方法有一个确定的上限 （100） 不符合题目要求
 */
+
+//我觉得这个写的好拖沓！ 希望有人能改进一下
+
+bool checkStart(int a[],int currentIndex,int sumfornow,int x)
+{
+    
+    if(a[currentIndex] + sumfornow > x)
+        return false;
+    if(a[currentIndex] + sumfornow == x)
+        return true;
+    else
+    {
+        if(a[currentIndex + 1] == EOF)
+            return false;
+        return checkStart(a ,currentIndex + 1, sumfornow + a[currentIndex], x);
+    }
+    return false;
+}
+
+bool explore(int a[],int x)
+{
+    bool flag = false;
+    for(int i = 0; i < sizeof(a); i ++)
+    {
+        if(a[i] == EOF)
+            break;
+        if(checkStart(a,i,0,x))
+        {
+            printf("Can find a start at pos %d \n",i+1);
+            flag = true;
+            return true;
+        }
+    }
+    if(flag == false)
+        return false;
+}
+
+int main()
+{
+    int *a = (int*)(malloc(sizeof(int)));
+    printf("Enter numbers : ");
+    int index = 0;
+    while(true)
+    {
+        int status = scanf("%d",a+index);
+        if(status == EOF || getchar() == '\n')
+        {
+            break;
+        }
+        index ++;
+        a = realloc(a,sizeof(int));
+    }
+    printf("Enter x : ");
+    int x;
+    scanf("%d",&x);
+
+    if(!explore(a,x))
+        printf("Can not find a start");
+}
