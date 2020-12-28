@@ -52,3 +52,42 @@ def BubbleSort(list = []):
         for j in range(0,len(list)-i-1):
             if(list[j] > list[j+1]):
                 list[j],list[j+1] = list[j+1],list[j]
+
+#Merge Sort
+def MergeSort(list = []):
+
+    if(len(list) < 2):
+        return list
+    
+    mid = len(list) // 2
+
+    left = MergeSort(list[:mid])
+    right = MergeSort(list[mid:])
+    result = []
+
+    while left and right :
+        if(left[0] <= right[0]):
+            result.append(left.pop(0))
+        else:
+            result.append(right.pop(0))
+    
+    if left:
+        result.extend(left)
+    if right:
+        result.extend(right)
+
+    return result
+
+#Quick Sort
+def QuickSort(list = []):
+
+    if(len(list) <= 1):
+        return list
+
+    point = list[0]
+
+    smaller = [x for x in list if x < point]
+    equals = [x for x in list if x == point]
+    bigger = [x for x in list if x > point]
+
+    return QuickSort(smaller) + equals + QuickSort(bigger)
