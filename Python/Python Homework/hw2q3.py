@@ -1,12 +1,12 @@
 def partition(a = []):
-    point = 0
-    for i in range(len(a)):
-        if(a[point] < a[i]):
-            a[point], a[i] = a[i], a[point]
-            point = i
-        if(a[point] == a[i] and a[i-1] != a[i]):
-            point = i
-    return point+1
+    pivot = 0
+    index = pivot+1
+    for i in range(index,len(a)):
+        if a[i] < a[pivot]:
+            a[i],a[index] = a[index], a[i]
+            index += 1
+    a[pivot],a[index-1] = a[index-1],a[pivot]
+    return index
 
 def quicksort(a):
     if len(a) < 2 :
@@ -20,4 +20,3 @@ val = input("Enter numbers : \n").split(' ')
 a = [int(i) for i in val if i != '']
 a = quicksort(a)
 print(a)
-
