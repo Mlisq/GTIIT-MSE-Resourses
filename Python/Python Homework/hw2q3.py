@@ -4,9 +4,11 @@ def partition(a = []):
         if(a[point] < a[i]):
             a[point], a[i] = a[i], a[point]
             point = i
+        if(a[point] == a[i] and a[i-1] != a[i]):
+            point = i
     return point+1
 
-def quicksort(a = []):
+def quicksort(a):
     if len(a) < 2 :
         return a
     i = partition(a)
