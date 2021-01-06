@@ -2,7 +2,7 @@ def partition(a = []):
     pivot = 0
     index = pivot+1
     for i in range(index,len(a)):
-        if a[i] < a[pivot]:
+        if a[i] > a[pivot]:
             a[i],a[index] = a[index], a[i]
             index += 1
     a[pivot],a[index-1] = a[index-1],a[pivot]
