@@ -9,7 +9,7 @@ def sort_3(a = []):
 
 def sort_n(a = []):
     if len(a) == 2:
-        return sort_2
+        return sort_2(a)
     for i in range(len(a)):
         if(i+3>len(a)):
             break
