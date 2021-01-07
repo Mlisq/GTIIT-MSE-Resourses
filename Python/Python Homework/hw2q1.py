@@ -8,6 +8,8 @@ def sort_3(a = []):
     return a
 
 def sort_n(a = []):
+    if len(a) == 2:
+        return sort_2
     for i in range(len(a)):
         if(i+3>len(a)):
             break
