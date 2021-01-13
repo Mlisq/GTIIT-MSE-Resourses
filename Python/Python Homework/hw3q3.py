@@ -1,11 +1,15 @@
-times = 0
+eventimes = 0
+oddtimes = 0
 def check(n):
-    global times
+    global eventimes
+    global oddtimes
     end = n % 10
     if end % 2 == 0:
-        times += 1
+        eventimes += 1
+    else:
+        oddtimes += 1
     if n // 10 == 0:
-        if times % 2 != 0 and times != 0:
+        if (eventimes % 2 != 0 and oddtimes %2 == 0):
             return True
         return False
     return check(n // 10)
