@@ -1,7 +1,7 @@
 def max_even(a = []):
     maximum = a[0]
     if(len(a) == 1):
-        return 0
+        return maximum
     for i in range(len(a)):
         if(a[i] >= maximum):
             maximum = a[i]
@@ -13,7 +13,7 @@ def max_even(a = []):
 
 val = input("Enter your mountain : \n").split(' ')
 a = [int(i) for i in val if i != '']
-if(len(a) <= 1):
+if(len(a) < 1):
     print("empty mountain")
 else:
     print(max_even(a))

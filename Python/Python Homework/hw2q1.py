@@ -17,5 +17,6 @@ def sort_n(a = []):
 
 val = input("Enter series : \n").split(' ')
 a = [int(i) for i in val if i != '']
-a = sort_n(a)
+if len(a) > 1:
+    a = sort_n(a)
 print(a)
