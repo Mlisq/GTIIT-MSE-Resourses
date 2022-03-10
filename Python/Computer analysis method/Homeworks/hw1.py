@@ -68,7 +68,7 @@ class CreateBMP:
         if(self.w % 4 == 0):
             self.dataSize = self.w * 3 * self.h
         else:
-            self.dataSize = self.h * 3 * (self.width + self.width % 4)
+            self.dataSize = self.h * 3 * (self.w + self.w % 4)
 
         self.fileSize = self.dataSize + 54
 
@@ -110,7 +110,8 @@ class CreateBMP:
 
         f.write(array('B', self.bmp_header).tobytes())
 
-        zeroBytes = self.dataSize // self.h - self.w * 3    #If width can be divided by 4 This term will be 0
+        #zeroBytes = self.dataSize // self.h - self.w * 3    #If width can be divided by 4 This term will be 0
+        zeroBytes = self.w % 4
 
         for r in range(self.h):
             l = []
@@ -130,7 +131,7 @@ class CreateBMP:
         f.close()
 
 if __name__ == '__main__':
-    image = CreateBMP(8, 2)
+    image = CreateBMP(9, 2)
 
     image.gen_bmp_header()
 
