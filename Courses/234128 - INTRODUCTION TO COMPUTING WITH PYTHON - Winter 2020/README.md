@@ -16,3 +16,5 @@
 ![](https://i.loli.net/2020/12/08/CFUXzPKhoYwcfru.png)
 否则，将会提醒在 **line** xxx **column** xxx 有错误
 7. 请记得多更换几次老师给的例子，重复上面的步骤～
+---
+<center><B>RIP my dear professor Mr.Israel Gutter</B></center>

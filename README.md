@@ -10,7 +10,7 @@
 <div align=center><img width="188" height="240.5" alt="WechatQR" src="https://github.com/Mlisq/GTIIT-MSE-Resourses/blob/master/IMGS/C_WCQR.JPG?raw=true"/></div>
 
 ## **Contribute**
-If you have any files want to contribute, please folk this repositories and use [Github-Desktop](https://desktop.github.com/) to upload your file. OR notice me on wechat.
+If you have any new files **(or better verson for existed one)** want to contribute, please folk this repositories and use [Github-Desktop](https://desktop.github.com/) to upload your file. OR notice me on wechat.
 
  ## **Links**
 - [GTIIT Website](https://www.gtiit.edu.cn/)
