@@ -7,7 +7,7 @@
 
 ## **Creator's Personal Info**
 **GTIIT MSE 3rd year student.** Favor in Computer Programming and Materials Engineering. Welcome to add my Wechat as friends.
-<div align=center><img width="125" height="160" alt="WechatQR" src="https://www.gtiit.edu.cn/images/logo.png"/></div>
+<div align=center><img width="125" height="160" alt="WechatQR" src="https://github.com/Mlisq/GTIIT-MSE-Resourses/blob/master/IMGS/C_WCQR.JPG"/></div>
 ## **
 
  ## **Links**
