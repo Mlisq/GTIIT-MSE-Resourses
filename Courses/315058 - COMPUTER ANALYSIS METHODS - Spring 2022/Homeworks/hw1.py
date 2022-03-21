@@ -131,7 +131,7 @@ class CreateBMP:
         f.close()
 
 if __name__ == '__main__':
-    image = CreateBMP(9, 2)
+    image = CreateBMP(8, 2)
 
     image.gen_bmp_header()
 
