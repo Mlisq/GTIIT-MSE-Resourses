@@ -18,7 +18,7 @@ NOTE: You must put your name in the legend of the frequency spectrum you obtaine
 import matplotlib.pyplot as plt
 import numpy as np 
 import scipy.interpolate as itp
-
+from scipy.fft import fft,fftfreq
 #Q1
 plt.figure(1)
 plt.xlabel('x values')
@@ -26,6 +26,7 @@ plt.ylabel('y values')
 plt.title('999006125 Yang Bai')
 
 #Part a
+xNumbers = np.linspace(-5, 5)
 r_xNumbers = np.linspace(-5,5,11)
 r_yNumbers = 1 / (1 + r_xNumbers**2)
 
@@ -34,14 +35,14 @@ l_Tangents = itp.lagrange(r_xNumbers, r_yNumbers)
 
 #Part c
 plt.plot(r_xNumbers,r_yNumbers,'o',color='#581845',label='Original')
-l_yNumbers = l_Tangents(r_xNumbers)
-plt.plot(r_xNumbers,l_yNumbers,color='#F45F3F',label = 'Lagrange')
+l_yNumbers = l_Tangents(xNumbers)
+plt.plot(xNumbers,l_yNumbers,color='#F45F3F',label = 'Lagrange')
 
 #Part d
 ch_yNumberTangent = (-1) * ((2*r_xNumbers) / (1+r_xNumbers**2)**2)
 ch_Tangents = itp.CubicHermiteSpline(r_xNumbers, r_yNumbers, ch_yNumberTangent)
-ch_yNumbers = ch_Tangents(r_xNumbers)
-plt.plot(r_xNumbers,ch_yNumbers,'--',color='#3F59F4',label = 'Cubic')
+ch_yNumbers = ch_Tangents(xNumbers)
+plt.plot(xNumbers,ch_yNumbers,'--',color='#3F59F4',label = 'Cubic')
 plt.legend()
 plt.show()
 
@@ -64,11 +65,10 @@ plt.legend()
 #Part b 
 plt.subplot(2,1,2)
 T = np.pi*8/256
-f_yValues = np.fft.fft(r_syValues)
-f_xValues = np.fft.fftfreq(256, T)
-print(f_xValues[randomX])
-print(f_yValues[randomX])
-plt.plot(f_xValues*2*np.pi,np.abs(f_yValues),color='#F87305',label='Yang Bai')
+f_yValues = fft(r_syValues)
+f_xValues = fftfreq(256, T)
+plt.plot(f_xValues,np.abs(f_yValues),color='#F87305',label='Yang Bai')
+plt.grid()
 plt.legend()
 plt.show()
 
