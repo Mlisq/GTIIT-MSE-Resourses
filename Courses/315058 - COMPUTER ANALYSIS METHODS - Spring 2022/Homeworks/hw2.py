@@ -78,6 +78,6 @@ plt.show()
 '''
 In Frequency spectrum, the positive frequency part is the same as the negative frequency part. So we will see a Symmetrical image.
 Because the origin function is just sinx, so we will only have one pair of 'significant' wave crest in frequency spectrum.
-Due to we also have a noise point,the "straght"(I add an extra picture highlighted this line) line in the bottom will shift up by the y axis with a distance, 
+Due to we also have a noise point,the "straight"(I add an extra picture highlighted this line) line in the bottom will shift up by the y axis with a distance, 
 this distance is related to the difference between original sinx data with the noise point.
 '''
