@@ -69,7 +69,7 @@ T = np.pi*8/256
 f_yValues = fft(r_syValues)
 f_xValues = fftfreq(256, T)
 plt.plot(f_xValues*2*np.pi,np.abs(f_yValues),color='#F87305',label='Yang Bai')
-plt.axis([-8,8,0,200])
+plt.axis([-8,8,0,130])
 plt.grid()
 plt.legend()
 plt.show()
@@ -78,6 +78,6 @@ plt.show()
 '''
 In Frequency spectrum, the positive frequency part is the same as the negative frequency part. So we will see a Symmetrical image.
 Because the origin function is just sinx, so we will only have one pair of 'significant' wave crest in frequency spectrum.
-Due to we also have a noise point,whole image will shift up by the y axis with a distance, 
+Due to we also have a noise point,the "straght"(I add an extra picture highlighted this line) line in the bottom will shift up by the y axis with a distance, 
 this distance is related to the difference between original sinx data with the noise point.
 '''
