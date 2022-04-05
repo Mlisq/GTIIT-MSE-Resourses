@@ -19,6 +19,7 @@ import matplotlib.pyplot as plt
 import numpy as np 
 import scipy.interpolate as itp
 from scipy.fft import fft,fftfreq
+
 #Q1
 plt.figure(1)
 plt.xlabel('x values')
@@ -55,7 +56,7 @@ plt.subplot(2,1,1)
 r_sxValues = np.linspace(-4*np.pi, 4*np.pi,256)
 r_syValues = np.sin(r_sxValues)
 noise = np.random.uniform(-0.1,0.1,1)
-randomX = int(np.random.uniform(0,256,1))   #Highlight the noise point
+randomX = int(np.random.uniform(0,256,1))
 noise_x = r_sxValues[randomX]
 r_syValues[randomX] = noise
 plt.plot(r_sxValues,r_syValues,'.',color='#990CF3',label='Original')
@@ -67,10 +68,16 @@ plt.subplot(2,1,2)
 T = np.pi*8/256
 f_yValues = fft(r_syValues)
 f_xValues = fftfreq(256, T)
-plt.plot(f_xValues,np.abs(f_yValues),color='#F87305',label='Yang Bai')
+plt.plot(f_xValues*2*np.pi,np.abs(f_yValues),color='#F87305',label='Yang Bai')
+plt.axis([-8,8,0,200])
 plt.grid()
 plt.legend()
 plt.show()
 
 #Part c
-print("")
+'''
+In Frequency spectrum, the positive frequency part is the same as the negative frequency part. So we will see a Symmetrical image.
+Because the origin function is just sinx, so we will only have one pair of 'significant' wave crest in frequency spectrum.
+Due to we also have a noise point,whole image will shift up by the y axis with a distance, 
+this distance is related to the difference between original sinx data with the noise point.
+'''
