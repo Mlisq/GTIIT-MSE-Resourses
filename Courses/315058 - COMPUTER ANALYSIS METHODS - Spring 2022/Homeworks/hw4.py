@@ -3,18 +3,33 @@ import scipy.misc as mi
 import scipy.integrate as ite 
 import matplotlib.pyplot as plt
 
-#Q3
+#Q3 参考 Xuanhao LIN 大哥来写的 我实在不知道simpson怎么写^^
 a, b, c = 3, 4, 5
+volume = (4/3)*np.pi*a*b*c
 def f1(y,x):
     return 2*c*np.sqrt(1 - ((x**2)/a**2) - ((y**2)/b**2))
 def f2(x):
     return [(-1) * b * np.sqrt(1 - ((x**2)/a**2)), b * np.sqrt(1 - ((x**2)/a**2))]
 nq = ite.nquad(f1, [f2, [-a , a]])
-error = np.abs(nq[0] - (4/3)*np.pi*a*b*c)
+error = np.abs(nq[0] - volume)
 print("Result from nqaud :",nq[0])
 print("Error is ", error)
 print("---------------------")
 
+N = 1717
+x = np.linspace(-a, a, N+1)
+def f3(x):
+    return b*np.sqrt(1-((x**2)/a**2))
+ylist = np.zeros(N+1)
+for i in range(len(x)):
+    y = np.linspace(-f3(x[i]), f3(x[i]), int(2 * f3(x[i]) / (2*a/N))+1)
+    z = 2*c*np.sqrt(abs(1-((x[i]**2)/a**2) - ((y**2)/b**2)))
+    ylist[i] = ite.simpson(z,y)
+ss = ite.simpson(ylist,x)
+ss_error = abs(ss - volume)
+print("Result from simpson :",ss)
+print("Error is ", ss_error)
+print("Spacing is ", 2*a/N)
 
 '''
 #Q2
