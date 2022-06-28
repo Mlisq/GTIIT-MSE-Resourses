@@ -5,11 +5,8 @@ import matplotlib.pyplot as plt
 
 
 def func1(t,y,a,b):
-<<<<<<< HEAD
+
     return [-2.0*a*b*y[0]-b*b*y[1]+np.sin(t),y[0]]
-=======
-    return [-2.0*a*b*y[0]-b*b*y[1]-np.sin(t),y[0]]
->>>>>>> a6ef86055c35c0f6ccb01946a2e325342d63b96e
 
 x1=np.linspace(0,np.pi*4,100)
 sol1=ite.solve_ivp(func1,[0,np.pi*4.0],[0,0.01],t_eval=x1, args=(1.0,0.5))
