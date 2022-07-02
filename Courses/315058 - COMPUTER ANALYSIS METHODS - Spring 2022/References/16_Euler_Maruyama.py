@@ -20,12 +20,12 @@ yarray = np.zeros(N)
 yarray[0] = 1   #initial condition
 
 #iteration
-def EM():
-    for i in tarray:
-        t = T0 + (i-1)*dT
-        y = yarray[i-1]
-        yarray[i] = y + (mu - y)* dT + sigma * dW(dT)
-        return yarray
+#def EM():
+for i in range(N):
+    t = T0 + (i-1)*dT
+    y = yarray[i-1]
+    yarray[i] = y + (mu - y)* dT + sigma * dW(dT)
+#return yarray
 
 # Plot
 plt.plot(tarray, yarray)

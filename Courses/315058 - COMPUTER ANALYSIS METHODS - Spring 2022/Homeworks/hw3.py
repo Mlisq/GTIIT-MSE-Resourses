@@ -19,8 +19,8 @@ from scipy import linalg
 import numpy as np
 import matplotlib.pyplot as plt
 
-'''
-Q1
+
+#Q1
 
 matrix_Given = [[3,2,0],
                 [1,-1,0],
@@ -39,11 +39,11 @@ print(luResults[2])
 
 print("Result of the matrixs' product : ")
 print((luResults[0].dot(luResults[1])).dot(luResults[2]))
-'''
+
 
 '''
 Q2
-
+'''
 matrix_Given = np.array([[2,1],
                 [1,2]])
 
@@ -71,4 +71,3 @@ plt.plot(xValues,eigenValueList, color = '#6D73F2', label = 'Ak eigenvalues')
 plt.plot(0 , 2, '.', color = '#F54325', label = 'Origin data')
 plt.legend()
 plt.show()
-'''
