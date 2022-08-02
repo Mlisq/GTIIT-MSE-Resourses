@@ -41,4 +41,4 @@ def bisection(a, b, func, tol):
     print("Method failed after N0 iteration, N0 = " + str(MAX_ITEREATION_NUMBER))
 
 if __name__ == "__main__":
-    bisection(0, 1, f, 0.000003)
+    bisection(0, 1, f, 1e-5)
