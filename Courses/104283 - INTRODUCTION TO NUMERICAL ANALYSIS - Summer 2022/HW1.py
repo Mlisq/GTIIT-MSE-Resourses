@@ -31,6 +31,7 @@ def bisection(a, b, func, tol):
             plt.axhline(y = 0, linestyle = '--', color = "#438F5D", label = "y = 0")
             plt.legend()
             plt.show()
+            return None
 
         if(LR * MR > 0):
             a = p
