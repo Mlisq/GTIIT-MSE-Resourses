@@ -10,15 +10,15 @@ def f(x):
     #return x*np.cos(x)-2*(x**2)+3*x-1
 
 def bisection(a, b, func, tol):
-    points = []
+    midpoints = []
 
     for i in range(MAX_ITEREATION_NUMBER):
-        if a not in points: points.append(a)
-        if b not in points: points.append(b)
 
         LR = func(a)
         p = a + (b-a)/2
         MR = func(p)
+
+        midpoints.append(p)
 
         if(MR == 0 or (b-a)/2 < tol):
             #Output result
@@ -27,11 +27,12 @@ def bisection(a, b, func, tol):
             #Plot the result
             xCoordnates = np.linspace(a-0.5, b+0.5, MAX_ITEREATION_NUMBER)
             plt.plot(xCoordnates, func(xCoordnates), label = "Function", color = "#202C2C")
-            plt.plot(points, np.zeros(len(points)), '.', label = "Points", color = "#016471")
+            plt.plot(midpoints, np.zeros(len(midpoints)), '.', label = "MidPoints", color = "#016471")
             plt.axhline(y = 0, linestyle = '--', color = "#438F5D", label = "y = 0")
             plt.legend()
             plt.show()
             return None
+            #OR return p if nessary
 
         if(LR * MR > 0):
             a = p
