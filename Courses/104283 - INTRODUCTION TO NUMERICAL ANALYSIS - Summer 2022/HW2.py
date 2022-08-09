@@ -28,7 +28,7 @@ if __name__ == '__main__':
     print("---------------------------------------------------")
     print("| In this function, we obtain that:               |")
     print("| [1]: In accuarcy:                               |")
-    if(np.abs(f(nsolution) - 0) < np.abs(f(mnsolution))):
+    if(np.abs(f(nsolution) - 0) < np.abs(f(mnsolution) - 0)):
         print("| Newton method is more accuracy.                 |")
     else:
         print("| Modified Newton method is more accuracy.        |")
