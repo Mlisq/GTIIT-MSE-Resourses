@@ -2,7 +2,8 @@ from HW2a import newton
 from HW2b import mod_newton
 import numpy as np
 
-MAX_ITERATION_NUMBER = 50
+MAX_ITERATION_NUMBER = 100
+#Can't not get answer from the second function if this number smaller than 50 ^^'
 
 def f(x):
     return 1-4*x*np.cos(x)+2*x**2+np.cos(2*x)
@@ -36,8 +37,10 @@ if __name__ == '__main__':
     print("| [2]:In iteration times:                         |")
     if(nite_times < mnite_times):
         print("| Newton method is Faster.                        |")
-    else:
+    elif(nite_times > mnite_times):
         print("| Modified Newton method is Faster.               |")
+    else:
+        print("| Both Methods is in eqaully speed                |")
     print("---------------------------------------------------")
     
 
