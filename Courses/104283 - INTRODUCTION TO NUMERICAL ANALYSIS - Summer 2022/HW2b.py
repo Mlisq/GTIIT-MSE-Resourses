@@ -7,9 +7,9 @@ def mod_newton(p0, f, df, ddf, tol, max_iter):
     points = []
 
     for i in range(max_iter):
-        if((df(p0)**2 - f(p0)*ddf(p0)) != 0):
-            p = p0 - (f(p0)*df(p0) / (df(p0)**2 - f(p0)*ddf(p0)))
-            points.append(p)
+        
+        p = p0 - (f(p0)*df(p0) / (df(p0)**2 - f(p0)*ddf(p0)))
+        points.append(p)
 
         if(np.abs(p - p0) < tol or (df(p0)**2 - f(p0)*ddf(p0)) == 0):
             print("Solution of f(x) = 0 is x = " + str(p))
