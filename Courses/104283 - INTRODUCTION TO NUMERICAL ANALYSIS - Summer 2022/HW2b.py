@@ -11,7 +11,7 @@ def mod_newton(p0, f, df, ddf, tol, max_iter):
         p = p0 - (f(p0)*df(p0) / (df(p0)**2 - f(p0)*ddf(p0)))
         points.append(p)
 
-        if(np.abs(p - p0) < tol or (df(p0)**2 - f(p0)*ddf(p0)) == 0):
+        if(np.abs(p - p0) < tol):
             print("Solution of f(x) = 0 is x = " + str(p))
             print("Iteration times is " + str(i+1))
             xCoordnates = np.linspace(p-1, p+1, max_iter)
