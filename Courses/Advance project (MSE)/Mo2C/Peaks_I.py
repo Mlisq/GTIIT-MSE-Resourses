@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
 from scipy.signal import find_peaks
 from scipy.optimize import curve_fit
 from scipy.stats import linregress
@@ -65,9 +66,9 @@ if __name__ == '__main__':
 
     fig, ax = plt.subplots(figsize = (20,10))
     
-    ax.plot(Pressure,p1,'.')
-    ax.plot(Pressure,p2,'.')
-    ax.plot(Pressure,p3,'.')
+    ax.scatter(Pressure,p1,s = 80)
+    ax.scatter(Pressure,p2,s = 80)
+    ax.scatter(Pressure,p3,s = 80)
 
     x = np.linspace(0, 35)
 
@@ -75,24 +76,29 @@ if __name__ == '__main__':
     ax.plot(x, coeffp1[0]*x+coeffp1[1],'-',label='Peak in 139.58cm-1')
     _, _, r_value, _, _ = linregress(Pressure, p1)
     info = "Slope: "+str(coeffp1[0]) + " || R-Square = "+str(r_value)
-    ax.annotate(info, xy=(30,coeffp1[0]*30+coeffp1[1]),xytext=(27,coeffp1[0]+coeffp1[1]-20),xycoords='data',arrowprops=dict(facecolor='black',shrink=0.05))
+    #ax.annotate(info, xy=(30,coeffp1[0]*30+coeffp1[1]),xytext=(27,coeffp1[0]+coeffp1[1]-20),xycoords='data',arrowprops=dict(facecolor='black',shrink=0.05))
 
     coeffp2,_ = curve_fit(func, Pressure, p2)
     ax.plot(x, coeffp2[0]*x+coeffp2[1],'-',label='Peak in 247.49cm-1')
     _, _, r_value, _, _ = linregress(Pressure, p2)
     info = "Slope: "+str(coeffp2[0]) + " || R-Square = "+str(r_value)
-    ax.annotate(info, xy=(30,coeffp2[0]*30+coeffp2[1]),xytext=(27,coeffp2[0]+coeffp2[1]-20),xycoords='data',arrowprops=dict(facecolor='black',shrink=0.05))
+    #ax.annotate(info, xy=(30,coeffp2[0]*30+coeffp2[1]),xytext=(27,coeffp2[0]+coeffp2[1]-20),xycoords='data',arrowprops=dict(facecolor='black',shrink=0.05))
 
     coeffp3,_ = curve_fit(func, Pressure, p3)
     ax.plot(x, coeffp3[0]*x+coeffp3[1],'-',label='Peak in 490.04cm-1')
     _, _, r_value, _, _ = linregress(Pressure, p3)
     info = "Slope: "+str(coeffp3[0]) + " || R-Square = "+str(r_value)
-    ax.annotate(info, xy=(30,coeffp3[0]*30+coeffp3[1]),xytext=(27,coeffp3[0]+coeffp3[1]-20),xycoords='data',arrowprops=dict(facecolor='black',shrink=0.05))
+    #ax.annotate(info, xy=(30,coeffp3[0]*30+coeffp3[1]),xytext=(27,coeffp3[0]+coeffp3[1]-20),xycoords='data',arrowprops=dict(facecolor='black',shrink=0.05))
     
-    ax.set_title("F vs P Curve")
-    ax.set_xlabel("Pressure[GPa]")
-    ax.set_ylabel("Location of the Peak[cm-1]")
+    ax.set_title("F vs P Curve",fontsize = 15)
+    ax.set_xlabel("Pressure[GPa]",fontdict={'size':15})
+    ax.set_ylabel("Location of the Peak[cm-1]",fontdict={'size':15})
+    ax.xaxis.set_major_locator(ticker.MultipleLocator(5))
+    ax.xaxis.set_minor_locator(ticker.MultipleLocator(1))
+    ax.yaxis.set_tick_params(labelsize = 15)
+    ax.xaxis.set_tick_params(labelsize = 15)
     ax.grid()
+
     plt.legend()
     plt.savefig('./Mo2C_PI.png', dpi = 300, transparent = True)
     plt.show()

@@ -16,12 +16,14 @@ for i in contents:
 
 
 ax.plot(x_data, y_data)
-ax.set_xlabel('2θ(°)')
-ax.set_ylabel('Intensity')
-ax.set_title('Source - CU')
+ax.set_xlabel('2θ(°)',fontsize = 15)
+ax.set_ylabel('Intensity',fontdict={'size':15})
+ax.set_title('Source - CU',fontdict={'size':15})
 ax.set_ylim(0,51500)
 ax.xaxis.set_major_locator(ticker.MultipleLocator(10))
 ax.xaxis.set_minor_locator(ticker.MultipleLocator(1))
+ax.yaxis.set_tick_params(labelsize = 15)
+ax.xaxis.set_tick_params(labelsize = 15)
 
 peaks, _ = find_peaks(y_data,distance=150,prominence=2e+03)
 
@@ -35,8 +37,8 @@ for i in range(len(peaks)):
 
 peaks = [34.5, 38.1, 39.5, 52.3, 61.7, 69.6, 74.7, 75.7]
 
-for i in peaks:
-    ax.axvline(x = i, ls='dashed',color='red')
+#for i in peaks:
+    #ax.axvline(x = i, ls='dashed',color='red')
 
 
 plt.legend()

@@ -29,21 +29,23 @@ for i in contents:
 
 fig, ax = plt.subplots(figsize = (20,10))
 
-ax.set_title("Raman spectrum for the sample Mo2C")
-ax.set_xlabel("Ramanshift[cm-1]")
-ax.set_ylabel("Intensity")
-ax.set_xlim(20,1300)
-ax.set_ylim(18200,19000)
+ax.set_title("Raman spectrum for the sample Mo2C",fontsize = 15)
+ax.set_xlabel("Ramanshift[cm-1]",fontdict={'size':15})
+ax.set_ylabel("Intensity",fontdict={'size':15})
+#ax.set_xlim(20,1300)
+#ax.set_ylim(18200,19000)
 ax.xaxis.set_major_locator(ticker.MultipleLocator(200))
 ax.xaxis.set_minor_locator(ticker.MultipleLocator(50))
-
+ax.yaxis.set_ticks([])
+ax.xaxis.set_tick_params(labelsize = 15)
+'''
 peaks, _ = find_peaks(y_axis[17:365],distance=25)
 for p in range(len(peaks)):
     if p in [0,1,3]:
-        #ax.axvline(x_axis[peaks[p]+17],ls = 'dashed')
-        ax.plot([x_axis[peaks[p]+17], x_axis[peaks[p]+17]],[18230, 18200], color = '#1f77b4')
-
+        ax.axvline(x_axis[peaks[p]+17],ls = 'dashed')
+        #ax.plot([x_axis[peaks[p]+17], x_axis[peaks[p]+17]],[18230, 18200], color = '#1f77b4')
+'''
 ax.plot(x_axis,y_axis)
 
-plt.savefig('./Mo2C_Raman.png', dpi = 300, transparent = True)
+plt.savefig('./Mo2C_Raman_All.png', dpi = 300, transparent = True)
 plt.show()

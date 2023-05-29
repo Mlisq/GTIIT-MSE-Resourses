@@ -28,11 +28,18 @@ for i in range(len(peaks)):
     print(x_axis[peaks[i]])
 
 ax.plot(x_axis, y_axis)
-ax.set_xlabel('2θ(°)')
-ax.set_ylabel('Intensity')
-ax.set_title('Source - CU')
+
+ax.set_title("Source - CU",fontsize = 15)
+ax.set_xlabel("2θ(°)",fontdict={'size':15})
+ax.set_ylabel("Intensity",fontdict={'size':15})
+
+ax.xaxis.set_major_locator(ticker.MultipleLocator(10))
+ax.xaxis.set_minor_locator(ticker.MultipleLocator(2))
+ax.xaxis.set_tick_params(labelsize = 15)
+ax.yaxis.set_tick_params(labelsize = 15)
+
 ax.set_ylim(0,30000)
-ax.set_xlim(0,90)
+#ax.set_xlim(0,90)
 
 ax.xaxis.set_major_locator(ticker.MultipleLocator(10))
 ax.xaxis.set_minor_locator(ticker.MultipleLocator(1))
